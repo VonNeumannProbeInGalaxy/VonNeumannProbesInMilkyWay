@@ -1,0 +1,282 @@
+
+todo:
+	*complete NCM_basic
+	-add AI part
+	-recode default starMapGenerator
+	-del test in STDfile __def_radRGB.py when v0.9 starting
+	-attention about:fps of do nothing changed 600fps >>> 300fps when v0.8.2.34
+		but it is changed back when v0.8.3.35,with no any code changing
+		I do NOT know why
+		this will be removed when v0.9 starting
+
+
+
+v0.8.5.37.20240321:
+	-in file simItem.py:
+		-in class star:
+			-add stellarWind_EKsp
+			-change meaning of stellarWind
+	-add settingKey:color_starColorScale
+		-and change its default value for easier-seeing
+	-improve some note
+
+v0.8.4.36.20240320:
+	-improve NBP0
+	-add starColorLine
+	-add settingKey:starColorLine_height
+	-better XYline.many changing included
+
+v0.8.3.35.20240319:
+	-change settingKey about star color due to voting of user
+	-add preDefinedSetting file:set_realisticStarColor.py
+		run to change settingKey about star color back to realistic felling
+	-change file:settingLoader.py:
+		-note of setting could include <sp> and tab now
+		-if settingRecord have no note,it would NOT cover existing note when loading
+
+v0.8.2.34.20240318:
+	-in file simItem.py:
+		-in class star:
+			-change item:
+				-luminosity
+				-color
+	-add item to setting_default.py:
+		-star_fullT
+		-star_colorT
+		-star_gamma
+		-star_LmapFunc
+		-star_LmapArg
+		-star_Lmin
+
+v0.8.1.33.20240318:
+	-add STDfile officially:
+		-__def_radP.py
+		-__def_radRGB.py
+		-__def_learnFunc.py
+	-import __def_radP.py and __def_radRGB.py in file simItem.py
+	-change file importStage.py to follow
+
+v0.8.0.32.20240317:
+	*make class planet in simItem.py completly build from atomic input-arg
+	-add file:
+		-planet_sp.py
+			a const file
+	-change file importStage.py
+	-some STDfile is ready to add in
+	-change file tool_delCache.py to del folder __pycache__ in folder const
+
+v0.7.12.31.20240309:
+	-add folder const
+		to include const.py and its source file
+
+v0.7.11.30.20240309:
+	-rewrite help file
+
+v0.7.10.29.20240309:
+	*move file about setting
+	-add folder setting_support
+		to include setting support file
+	-other changing to follow
+
+v0.7.9.28.20240309:
+	*move file NCM.py to folder root
+		it also solve some bug hardly ever happen
+	-and many file changing to follow
+	-del file __main__.py and __run_in_cmd.cmd
+		duo to you can just run NCM.py in folder root,they are useless now 
+
+v0.7.8.27.20240308:
+	-add NBP to _readme_userHandBook.txt
+	-add displayCache to class starSYS in file simItem.py
+
+v0.7.7.26.20240308:
+	*add NBP system
+	-add folder NBP and file NBP0
+	-in file simItem.py in class star add maxP_Gbattery
+	-extend file _readme_userHandBook.txt
+
+v0.7.6.25.20240307:
+	*due to idea changed,simItem.py change to follow it
+	-in file simItem.py:
+		-change many,too many to record
+	-clear file starMapGenerator_simple.py,and mark file starMapGeneratorExample.py to wait for recoding
+
+v0.7.5.24.20240307:
+	-add file:_readme_userHandBook.txt
+
+v0.7.4.23.20240307:
+	-add folder:starMapGenerator
+		to include all starMapGenerator file
+		no matter made by we or user
+	-change file tool_delCache
+		to del folder __pycache__ in folder starMapGenerator added lastly
+
+v0.7.3.22.20240307:
+	-add folder:__def_DaggerSTD
+		to include myself STD pyFile
+		because file have been too many
+	-change file tool_delCache
+		to del folder __pycache__ in folder __def_DaggerSTD added lastly
+
+v0.7.2.21.20240306:
+	-in file simItem.py:
+		-in class starSYS:
+			-in infoLog:
+				-add teamID
+				-add controller
+				-add eventL_open
+				-add eventL_team
+
+v0.7.1.20.20240306:
+	-in file simItem.py:
+		-in class starSYS:
+			-mass_HHe4+mass_DHe3 >>> mass_HHe+massDHe3Rate
+				because H+He4 is not divide with DHe3
+			-cancel full infoLog when init starSYS
+				because it is not necessary
+				and through cancel it,loading time is killed
+
+v0.7.0.19.20240306:
+	*add support of simple starMapGenerator
+	-add settingKey:starMapGenerator
+	-add file:
+		-starMapGeneratorExample.py
+		-starMapGenerator_simple.py
+	-import relationship changed
+
+v0.6.1.18.20240306:
+	*add gasGiant
+	-in file simItem.py:
+		-add class gasGiant
+		-in class starSYS:
+			-add gasGiantL
+		-in class planet:
+			-change HHe4Rate >>> rockRate
+				so it is similar to gasGiant:
+				HHe4 is a common,or default type of massResource
+				with DHe3 and rock are both special type
+
+v0.6.0.17.20240305:
+	*due to idea changed,simItem.py change to follow it
+	-in file simItem.py:
+		-change waterRate >>> HHe4Rate+DHe3Rate
+		-change mass_ice >>> mass_HHe4+mass_DHe3
+		-add DHe3store
+
+v0.5.1.16.20240305:
+	*goodlooking settingLoader and its outputFile
+	-add file:
+		-__def_ACKnormal.py
+			to add support of ACKnowledgement
+		-__def_uncMatTab.py
+			to add support of format unicode srting matrix
+	-better settingLoader.py
+
+v0.5.0.15.20240304:
+	*add setting record&load tool
+	-add file:
+		-settingRecorder.py
+			to create setting record file
+		-settingLoader.py
+			to take a part in load setting record file
+		-__def_fileNameChk.py
+			to check name of setting record file
+	-add tab to setting_default.py
+	-move half-size of photoWindow:setting_default.py >>> simItem.py
+
+v0.4.2.14.20240304:
+	-add file:
+		-settingSelector.py
+			to choose setting_default in first time
+			and change itself to create_setting_user at same time
+			then it choose setting_user in next time
+			-tool_delCache.py will reset this file
+
+v0.4.1.13.20240304:
+	-add file:
+		-create_setting_user.py
+			to auto-create setting_user.py base on setting_default.py when it is not found
+	-del color_star in file setting_default.py
+	-some import relationship changing
+
+v0.4.0.12.20240304:
+	-add file:
+		-setting_user.py
+			to avoid change setting_default
+			now it is directly import from setting_default
+
+v0.3.0.11.20240304:
+	-add file:
+		-tool_delCache.py
+			to auto-clear cache file before a virsion released
+
+v0.2.3.10.20240304:
+	-in file simItem.py:
+		-in class starSYS:
+			-del Estorage_fast
+			-rename Estorage_slow >>> Estorage
+		-in class star:
+			-add R
+			-add color
+			-add cache
+
+v0.2.2.9.20240303:
+	-add mass_ice to class starSYS in file simItem.py
+	-add waterRate to class planet in file simItem.py
+	-add Gbattery_sp to class star in file simItem.py
+		and change the way of compute of Gbattery_sp in class starSYS in file simItem.py
+
+v0.2.1.8.20240303:
+	-rename: dysonCloud >>> dysonSwarm
+	-change class starSYS in file simItem.py
+
+v0.2.0.7.20240303:
+	-add file:
+		-simItem.py
+			to add simItem support
+
+v0.1.5.6.20240303:
+	*final virsion of dividing file and changing import relationship frequently in this stage
+	-change import relationship:init_starMap.py in init.py >>> init_photoWindow.py
+		because simItem part of init_photoWindow need info of starMap
+	-add file:
+		-importStage.py
+			to introduce/record import relationship
+
+v0.1.4.5.20240302:
+	-add file:
+		-init_starMap.py
+			to divide starMap-init part of init.py to this file
+		-init_photoWindow.py
+			to divide photoWindow-init part of init.py to this file
+
+v0.1.3.4.20240302:
+	-move var programName:NCM.py >>> const.py
+	-add file:
+		-init.py
+			to divide init part of NCM.py to this file
+
+v0.1.2.3.20240302:
+	-a few change of function FPSinfo() in file NCM.py
+	-add file:
+		-__def_closing.py
+			the standard virsion of function closing() in file NCM.py
+
+v0.1.1.2.20240302:
+	-add file:
+		-__main__.py
+			to support some auto-run tool
+		-__run_in_cmd.cmd
+			to support some auto-run tool
+	-rename file:
+		-_license.txt >>> ___license.txt
+			to put it in front
+	-better code for cover-print in cmd
+		thanks to:https://zhuanlan.zhihu.com/p/570148970
+
+v0.1.0.1.20240302:
+	*framework complete
+
+start:
+	code part of this program is starting at:20240227
+	idea part was created a few days earlier

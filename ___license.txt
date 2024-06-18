@@ -1,0 +1,15 @@
+in default case,this progarm is under this license:
+
+### CC-BY-NC-SA-v4.0 & GPL-v3(stricter one if conflict) ###
+
+if need more right,just let we know.than,there are 3 case:
+	-more right for free
+	-more right for cost(expense or exchange-right)
+	-just reject
+
+"we" means main-author of this progarm:
+	-有机智能.author of idea
+	-EDLSDPSY.main-contributor of idea
+	-Dagger.author of code
+in common case,we would ask who in <thanks.txt> for comment
+because in a sense,this progarm is belonging to them,too

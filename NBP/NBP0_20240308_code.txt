@@ -1,0 +1,52 @@
+*define NBP system
+
+NBP=<N>CM being <B>etter <P>lan
+
+NBP是NCM的改进提案系统,类似python的PEP
+NBP不保证包含所有改进
+NBP提案一旦被接收和分配序列号,永不删除
+
+===NBP的文件名格式===
+NBP<idx>_<yyyymmdd>_<stage>.txt
+如NBP0_20240308_code.txt
+idx:NBP序列号,严格从0开始递增,分配后永不更改
+yyyymmdd:8位数字提交日期,如20240308
+stage:提案的当前状态.NBP提案有4种状态:
+	-open.已接收为正式NBP提案,正在讨论
+	-dead.已被拒绝,或已被包含在更好的NBP提案中
+	-good.已被接受,正在等待在更新中加入
+	-code.已加入NCM源代码,或已完全完成
+特别注意code状态的NBP不一定是现行的,可能被后来的NBP覆盖
+特殊的,NBP0(本文件)在原位更改
+
+===提交NBP提案的文件名格式===
+NBP.<yyyymmdd>.<anyString>.txt
+如NBP.20240308.abc123;*.txt
+anyString:一个任意的可作文件名的8位ascii字符串,用于区分同一天提交的不同NBP提案
+
+===NBP提案内容格式===
+在首行以*开头,描述提案的主题.然后接一空行
+第3行是作者名称列表.然后接一空行.___license.txt中的本项目主要作者即使有贡献也不会列入
+之后以清晰的方式描述改进的内容,并推荐附带理由,无格式要求
+
+===NBP提案的接收===
+NBP提案应是已经经过考虑和讨论,相对成熟的.避免提交一时兴起的想法,然后频繁修改
+所有提交的提案都会被接收,除非被认为是无理取闹或未经任何考虑的
+尽管不符合格式的提交也会尽可能地接收,但仍然建议遵循格式
+没有形成NBP提案的重要的讨论由我总结为提案
+NBP提案一旦被接收,即分配一个正式的NBP序列号,进入NBP库,随下一个分发版本发布
+一个NBP提案被标记为good或code,其(共同)作者即进入thanks.txt
+
+===NBP提案的修改===
+---对open或good阶段的提案---
+提交其新版本:
+NBP<idx>_update<yyyymmddhhmm>.txt
+如NBP123_update202403082359.txt
+yyyymmddhhmm:12位数字修改版本提交时间
+good阶段的提案应谨慎修改
+如提案已code或dead,请提交新提案
+---对尚未接收的提案---
+提交其新版本:
+NBP.<yyyymmdd>.<randomString>-change<changeCount>.txt
+如NBP.20240308.abc123;*-change1.txt
+changeCount:修改的次数
